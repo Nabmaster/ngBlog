@@ -5,10 +5,14 @@
     </div>
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Articles</a>
+        <span>
+          <a class="nav-link" href="#" (click)="edit=false">Articles</a>
+        </span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Formulaire</a>
+        <span>
+          <a class="nav-link" href="#" (click)="edit=true">Formulaire</a>
+        </span>
       </li>
     </ul>
   </div>
@@ -16,17 +20,25 @@
 <div class="jumbotron">
   <h1 style="color:red">Mon Site Angular</h1>
 </div>
+
 <div class="container">
-  <div class="listArticle">
+
+  <div class="listArticle" *ngIf="!edit">
+    <div class="article" *ngFor="let article of articles">
+      <h2>{{ article?.title }}</h2>
+      <p>{{ article?.description }}</p>
+    </div>
   </div>
-  <div>
-    <form class="" method="post">
-      <p><input type="text" name="title" placeholder="titre"></p>
-      <p><textarea name="description" rows="6" cols="60" placeholder="Description..."></textarea></p>
+
+  <div class="container-fluid" *ngIf="edit">
+    <form class="article-form" method="post" (ngSubmit)="saveArticle(myForm)" #myForm="ngForm">
+      <p><input type="text" [(ngModel)]="editArticle.title" name="title" placeholder="titre..."></p>
+      <p><textarea name="description" rows="6" cols="60" [(ngModel)]="editArticle.description"placeholder="Description..."></textarea></p>
       <p>
-        <input type="text" name="author" placeholder="Auteur">
-        <button class="btn btn-danger" type="button" name="button">Ajouter un article</button>
+        <input type="text" name="author" placeholder="Auteur...">
+        <button class="btn btn-danger" type="button" (click)="addArticle()">Ajouter un article</button>
       </p>
     </form>
   </div>
+
 </div>
