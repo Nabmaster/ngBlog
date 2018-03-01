@@ -5,3 +5,23 @@ h1 {
 a.nav-link:hover {
   color: red;
 }
+div.article{
+  background-color: #999;
+  position: relative;
+  animation-name: liste;
+  animation-duration: 1s;
+}
+@keyframes liste {
+    0%   {top:500px;}
+    100% {top:0px;}
+}
+div.container-form{
+  background-color: #999;
+  position: relative;
+  animation-name: form;
+  animation-duration: 1s;
+}
+@keyframes form {
+    0%   {left:1500px;}
+    100% {left:0px;}
+}

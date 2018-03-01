@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm bg-dark">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">ngBlog</a>
+      <a class="navbar-brand" href="index.html">ngBlog</a>
     </div>
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -11,7 +11,7 @@
       </li>
       <li class="nav-item">
         <span>
-          <a class="nav-link" href="#" (click)="edit=true">Formulaire</a>
+          <a class="nav-link" href="#" (click)="edit=true">[+]</a>
         </span>
       </li>
     </ul>
@@ -24,19 +24,25 @@
 <div class="container">
 
   <div class="listArticle" *ngIf="!edit">
-    <div class="article" *ngFor="let article of articles">
-      <h2>{{ article?.title }}</h2>
+    <div class="article" *ngFor="let article of articles; index as i;">
+      <h2>
+        {{ article?.title }}
+        <img src="assets/edit.png" (click)="modifyArticle(article.id, i)" alt="modifier"/>
+        <img src="assets/delete.png" (click)="deleteArticle(article.id, i)" alt="supprimer"/>
+      </h2>
       <p>{{ article?.description }}</p>
+      <p>{{ article?.author }}</p>
     </div>
   </div>
 
-  <div class="container-fluid" *ngIf="edit">
-    <form class="article-form" method="post" (ngSubmit)="saveArticle(myForm)" #myForm="ngForm">
+  <div class="container-form" *ngIf="edit">
+    <h2>Ajouter un article:</h2>
+    <form class="article-form" (ngSubmit)="saveArticle(myForm)" #myForm="ngForm">
       <p><input type="text" [(ngModel)]="editArticle.title" name="title" placeholder="titre..."></p>
-      <p><textarea name="description" rows="6" cols="60" [(ngModel)]="editArticle.description"placeholder="Description..."></textarea></p>
+      <p><textarea name="description" rows="5" cols="80" [(ngModel)]="editArticle.description" placeholder="Description..."></textarea></p>
       <p>
-        <input type="text" name="author" placeholder="Auteur...">
-        <button class="btn btn-danger" type="button" (click)="addArticle()">Ajouter un article</button>
+        <input type="text" name="author" [(ngModel)]="editArticle.author" placeholder="Auteur...">
+        <button class="btn btn-danger" type="button" (click)="addArticle(); backToList();">Ajouter un article</button>
       </p>
     </form>
   </div>
