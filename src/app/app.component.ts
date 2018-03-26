@@ -42,8 +42,8 @@ export class AppComponent {
     if(this.editArticle.id){
     this.articleService.update(this.editArticle).subscribe((article) => {
       //remplacer l'article a jour dans la liste
-      let index = this.articles.findInde(
-      (value: Article) =>value.id === aricle.id
+      let index = this.articles.findIndex(
+      (value: Article) =>value.id === article.id
     );
     this.articles.splice(index, 1, article);
     });
@@ -51,7 +51,7 @@ export class AppComponent {
     this.articleService.create(this.editArticle).subscribe((article) => this.articles.push(article));
   }
     this.articles.push(JSON.parse(JSON.stringify(this.editArticle)));
-    myForm.resetForm();    
+    myForm.resetForm();
     this.edit = false;
   }
   deleteArticle(id: number, index: number){
