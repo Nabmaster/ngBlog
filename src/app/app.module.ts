@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ArticleService } from './article.service';
-import { Article } from './article';
 
 
 @NgModule({
@@ -16,8 +15,7 @@ import { Article } from './article';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    Article
+    HttpClientModule
   ],
   providers: [
     ArticleService

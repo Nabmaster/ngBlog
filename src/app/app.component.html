@@ -42,7 +42,7 @@
       <p><textarea name="description" rows="5" cols="80" [(ngModel)]="editArticle.description" placeholder="Description..."></textarea></p>
       <p>
         <input type="text" name="author" [(ngModel)]="editArticle.author" placeholder="Auteur...">
-        <button class="btn btn-danger" type="button" (click)="addArticle(); backToList();">Ajouter un article</button>
+        <button class="btn btn-danger" type="button" (click)="saveArticle();backToList();">Ajouter un article</button>
       </p>
     </form>
   </div>
