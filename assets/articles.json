@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "title": "Article 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolorum, ut odit, veniam aut, rem itaque nihil, dignissimos blanditiis explicabo aspernatur obcaecati quidem. Cum ex molestias in fugiat deserunt mollitia?",
+    "author": "admin",
+    "date": "28-02-2018"
+  },
+  {
+    "id": 1,
+    "title": "Article 2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolorum, ut odit, veniam aut, rem itaque nihil, dignissimos blanditiis explicabo aspernatur obcaecati quidem. Cum ex molestias in fugiat deserunt mollitia?",
+    "author": "nab",
+    "date": "28-02-2018"
+  },
+  {
+    "id": 2,
+    "title": "Article 3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolorum, ut odit, veniam aut, rem itaque nihil, dignissimos blanditiis explicabo aspernatur obcaecati quidem. Cum ex molestias in fugiat deserunt mollitia?",
+    "author": "greg",
+    "date": "28-02-2018"
+  },
+  {
+    "id": 3,
+    "title": "Article 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolorum, ut odit, veniam aut, rem itaque nihil, dignissimos blanditiis explicabo aspernatur obcaecati quidem. Cum ex molestias in fugiat deserunt mollitia?",
+    "author": "leo",
+    "date": "28-02-2018"
+  }
+]
